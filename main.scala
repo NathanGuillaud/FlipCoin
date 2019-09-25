@@ -31,11 +31,18 @@ object CoinFlip extends App {
         mainLoop(newGameState, random)
       }
       
-    }else{
+    }else if(playerChoice == "n"){
       
+      //Display game results
+      displayEnd(gameState)
+      //Start a new game
+      val newRandom = Random
+      val newGameState = GameState(0, 0)
+      mainLoop(newGameState, newRandom)
+      
+    }else{
       //End of the game
       displayEnd(gameState)
-      
     }
     
   }
